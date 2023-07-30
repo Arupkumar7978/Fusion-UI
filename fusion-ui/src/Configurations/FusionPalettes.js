@@ -1,17 +1,17 @@
-const theme = 'LIGHT';
+const theme = "LIGHT";
 
 const COLOR_PALETTE = {
   LIGHT: {
-    BACKGROUND: '',
-    primary: '',
-    secondary: '',
-    tertiary: '',
+    BACKGROUND: "#FFFFFF",
+    PRIMARY: "#0D0D0E",
+    SECONDARY: "#FFFFFF",
+    TERTIARY: "#333333",
   },
   DARK: {
-    BACKGROUND: '',
-    primary: '',
-    secondary: '',
-    tertiary: '',
+    BACKGROUND: "#0D0D0E",
+    PRIMARY: "#FFFFFF",
+    SECONDARY: "#0D0D0E",
+    TERTIARY: "#333333",
   },
 };
 
