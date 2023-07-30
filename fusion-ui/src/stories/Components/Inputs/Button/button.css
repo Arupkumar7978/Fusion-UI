@@ -1,30 +1,71 @@
-.storybook-button {
+:root {
+    --background: #FFFFFF;
+    --muted: #F5F6FB;
+    --muted-foreground: #797E92;
+    --popover: #FFFFFF;
+    --popover-foreground: #0D0D0E;
+    --card: #FFFFFF;
+    --card-foreground: #0D0D0E;
+    --border: #C1C2C7;
+    --input: #C1C2C7;
+    --primary: #1A1A1C;
+    --primary-foreground: #FAFAFA;
+    --secondary: #F5F6FB;
+    --secondary-foreground: #1A1A1C;
+    --accent: #F5F6FB;
+    --accent-foreground: #1A1A1C;
+    --destructive: #FF1F33;
+    --destructive-foreground: #FAFAFA;
+    --ring: #676A81;
+    --foreground: #0D0D0E;
+    --shadow:#00000026 0px 0px 0px 1px inset;
+    --text-sm:0.875rem;
+    --text-md:1rem;
+    --text-lg:1.5rem;
+    --line-height-size:1.25rem;
+    --radius:0.5rem;
+  }
+    
+
+.fusion-button {
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 700;
+  font-weight: 500;
+  color: var(--secondary-foreground);
   border: 0;
-  border-radius: 3em;
+  border-radius: calc(var(--radius) - 2px);
   cursor: pointer;
-  display: inline-block;
-  line-height: 1;
+  display:flex;
+  align-items: center;
+  line-height: var(--line-height-size);
 }
-.storybook-button--primary {
-  color: white;
-  background-color: #1ea7fd;
+.fusion-button--primary {
+  color: var(--primary-foreground);
+  background-color: var(--primary);
 }
-.storybook-button--secondary {
-  color: #333;
-  background-color: transparent;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+.fusion-button--secondary {
+  background-color: var(--secondary);
 }
-.storybook-button--small {
-  font-size: 12px;
-  padding: 10px 16px;
+.fusion-button--tertiary {
+  background-color: var(--background);
+  border:0.05rem solid var(--input);
 }
-.storybook-button--medium {
-  font-size: 14px;
-  padding: 11px 20px;
+
+.fusion-button--small {
+  font-size: var(--font-size-small);
+  padding: 0.25rem 0.625rem;
 }
-.storybook-button--large {
-  font-size: 16px;
-  padding: 12px 24px;
+.fusion-button--medium {
+  font-size: var(--font-size-medium);
+  padding: 0.375rem 1rem ;
+}
+.fusion-button--large {
+  font-size: var(--font-size-large);
+  padding: 0.5rem 1.375rem;
+}
+
+.fusion-button--icon--left{
+  display: flex;
+  font-size:large;
+  padding-right: 0.3rem;
+  margin-top: 0.1rem;
 }
