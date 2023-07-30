@@ -2,46 +2,60 @@ import React from 'react';
 import './button.css';
 
 interface ButtonProps {
-  /**
-   * Is this the principal call to action on the page?
-   */
   variant?: 'primary' | 'secondary' | 'tertiary';
-  /**
-   * What background color to use
-   */
+  disabled?: boolean;
   backgroundColor?: string;
-  /**
-   * How large should the button be?
-   */
+  setIcon?: {
+    icon:
+      | React.ReactElement
+      | JSX.Element
+      | HTMLElement
+      | React.ReactNode
+      | null;
+    alignment?: 'left' | 'right';
+  };
   size?: 'small' | 'medium' | 'large';
-  /**
-   * Button contents
-   */
   label: string;
-  /**
-   * Optional click handler
-   */
   onClick?: () => void;
 }
 
-/**
- * Primary UI component for user interaction
- */
-export const Button = ({
-  variant = "primary",
+const Button = ({
+  variant = 'primary',
   size = 'medium',
-  backgroundColor,
+  backgroundColor = '',
   label,
+  setIcon = {
+    icon: null,
+    alignment: 'left',
+  },
   ...props
 }: ButtonProps) => {
+  console.log(variant);
+
   return (
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, `storybook-button--${variant}`].join(' ')}
+      className={[
+        'fusion-button',
+        `fusion-button--${size}`,
+        `fusion-button--${variant}`,
+      ].join(' ')}
       style={{ backgroundColor }}
       {...props}
     >
+      <span
+        className={`fusion-button--icon--${
+          setIcon?.alignment ?? 'left'
+        }`}
+      >
+        {setIcon &&
+          React.isValidElement(setIcon?.icon) &&
+          React.cloneElement(setIcon?.icon)}
+      </span>
       {label}
     </button>
   );
 };
+
+export default Button;
+
