@@ -21,10 +21,6 @@
   font-weight: 500;
 }
 
-.typography--disabled {
-  color: grey;
-}
-
 .typography--extraSmall {
   font-size: x-small;
 }
@@ -48,4 +44,8 @@
 .typography--mandatory {
   color: red;
   margin-left: 0.25rem;
+}
+
+.typography--disabled {
+  color: grey;
 }
