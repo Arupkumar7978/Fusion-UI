@@ -21,27 +21,27 @@ type Story = StoryObj<typeof meta>;
 export const Display: Story = {
   args: {
     variant: "display",
-    childreen: "Welcome to the world of Typography",
+    children: "Welcome to the world of Typography",
   },
 };
 
 export const Body: Story = {
   args: {
     variant: "body",
-    childreen: "Welcome to the world of Typography",
+    children: "Welcome to the world of Typography",
   },
 };
 
 export const Heading: Story = {
   args: {
     variant: "heading",
-    childreen: "Welcome to the world of Typography",
+    children: "Welcome to the world of Typography",
   },
 };
 
 export const Link: Story = {
   args: {
     variant: "link",
-    childreen: "Welcome to the world of Typography",
+    children: "Welcome to the world of Typography",
   },
 };
