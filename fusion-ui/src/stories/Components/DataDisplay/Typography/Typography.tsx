@@ -1,10 +1,11 @@
 import React from "react";
 import "./Typography.css";
+import clsx from "clsx";
 
 interface TypographyProps {
   variant?: "display" | "body" | "heading" | "link";
   size?: "extraSmall" | "small" | "medium" | "large" | "extraLarge";
-  childreen: React.ReactNode;
+  children: React.ReactNode;
   mandatory?: boolean;
   disabled?: boolean;
 }
@@ -12,22 +13,31 @@ interface TypographyProps {
 const Typography = ({
   variant = "body",
   size = "medium",
-  childreen,
+  children,
   mandatory = false,
   disabled = false,
   ...props
 }: TypographyProps) => {
   return (
     <span
-      className={[
-        "typography",
-        `typography--${variant}`,
-        `typography--${size}`,
-      ].join(" ")}
+      className={clsx(
+        ["typography", `typography--${variant}`, `typography--${size}`].join(
+          " "
+        ),
+        { "typography--disabled": disabled }
+      )}
       {...props}
     >
-      {childreen}
-      {mandatory && <span className="typography--mandatory">*</span>}
+      {children}
+      {mandatory && (
+        <span
+          className={clsx("typography--mandatory", {
+            "typography--disabled": disabled,
+          })}
+        >
+          *
+        </span>
+      )}
     </span>
   );
 };

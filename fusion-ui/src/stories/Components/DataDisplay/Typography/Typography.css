@@ -21,6 +21,10 @@
   font-weight: 500;
 }
 
+.typography--disabled {
+  color: grey;
+}
+
 .typography--extraSmall {
   font-size: x-small;
 }
