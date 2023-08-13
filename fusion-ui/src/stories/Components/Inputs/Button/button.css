@@ -1,53 +1,65 @@
 :root {
-    --background: #FFFFFF;
-    --muted: #F5F6FB;
-    --muted-foreground: #797E92;
-    --popover: #FFFFFF;
-    --popover-foreground: #0D0D0E;
-    --card: #FFFFFF;
-    --card-foreground: #0D0D0E;
-    --border: #C1C2C7;
-    --input: #C1C2C7;
-    --primary: #1A1A1C;
-    --primary-foreground: #FAFAFA;
-    --secondary: #F5F6FB;
-    --secondary-foreground: #1A1A1C;
-    --accent: #F5F6FB;
-    --accent-foreground: #1A1A1C;
-    --destructive: #FF1F33;
-    --destructive-foreground: #FAFAFA;
-    --ring: #676A81;
-    --foreground: #0D0D0E;
-    --shadow:#00000026 0px 0px 0px 1px inset;
-    --text-sm:0.875rem;
-    --text-md:1rem;
-    --text-lg:1.5rem;
-    --line-height-size:1.25rem;
-    --radius:0.5rem;
-  }
-    
+  --background: #ffffff;
+  --border: #c1c2c7;
+  --primary: #1a1a1c;
+  --primary-text: #fafafa;
+  --secondary: #f5f6fb;
+  --secondary-text: #1a1a1c;
+  --foreground: #0d0d0e;
+  --primary-hover: #1c1c1cc4;
+  --secondary-hover: #c8c8c836;
+  --primary-text-hover: #fafafad6;
+  --error-state: #db2828;
+  --shadow: #00000026 0px 0px 0px 1px inset;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.5rem;
+  --line-height-size: 1.25rem;
+  --radius: 0.5rem;
+  --font-size-small: 0.8rem;
+  --font-size-medium: 1rem;
+  --font-size-large: 1.2rem;
+  --letter-spacing-common: 0.02rem;
+}
 
 .fusion-button {
-  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial,
+    sans-serif;
   font-weight: 500;
   color: var(--secondary-foreground);
   border: 0;
   border-radius: calc(var(--radius) - 2px);
   cursor: pointer;
-  display:flex;
+  display: flex;
+  outline: unset;
   align-items: center;
+  transition: 0.3s ease-in-out;
   line-height: var(--line-height-size);
+  letter-spacing: var(--letter-spacing-common);
 }
 .fusion-button--primary {
-  color: var(--primary-foreground);
+  color: var(--primary-text);
   background-color: var(--primary);
 }
-.fusion-button--secondary {
-  background-color: var(--secondary);
+.fusion-button--primary:hover {
+  background-color: var(--primary-hover);
+  color: var(--primary-text-hover);
 }
+.fusion-button--secondary {
+  background-color: var(--background);
+  border: 0.05rem solid var(--border);
+  color: var(--secondary-text);
+}
+.fusion-button--secondary:hover {
+  background-color: var(--secondary-hover);
+  color: var(--primary-hover);
+}
+
 .fusion-button--tertiary {
   background-color: var(--background);
-  border:0.05rem solid var(--input);
+}
+.fusion-button--tertiary:hover {
+  background-color: var(--secondary-hover);
 }
 
 .fusion-button--small {
@@ -56,16 +68,34 @@
 }
 .fusion-button--medium {
   font-size: var(--font-size-medium);
-  padding: 0.375rem 1rem ;
+  padding: 0.375rem 1rem;
 }
 .fusion-button--large {
   font-size: var(--font-size-large);
   padding: 0.5rem 1.375rem;
 }
 
-.fusion-button--icon--left{
+.fusion-button--icon--left {
   display: flex;
-  font-size:large;
+  font-size: large;
   padding-right: 0.3rem;
   margin-top: 0.1rem;
+}
+.fusion-button--icon--left {
+  font-size: large;
+  padding-left: 0.3rem;
+  margin-top: 0.1rem;
+}
+.fusion-button--icon--right {
+  font-size: large;
+  display: flex;
+  margin-top: 0.1rem;
+}
+.fusion-button-icon-alignment-right {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 0.3rem;
+}
+.fusion-error-state {
+  background-color: var(--error-state);
 }

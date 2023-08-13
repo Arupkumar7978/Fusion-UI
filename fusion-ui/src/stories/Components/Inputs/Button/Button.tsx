@@ -1,61 +1,47 @@
-import React from 'react';
+import React, { cloneElement } from 'react';
 import './button.css';
+import ButtonProps from './buttonTypes';
+import clsx from 'clsx';
 
-interface ButtonProps {
-  variant?: 'primary' | 'secondary' | 'tertiary';
-  disabled?: boolean;
-  backgroundColor?: string;
-  setIcon?: {
-    icon:
-      | React.ReactElement
-      | JSX.Element
-      | HTMLElement
-      | React.ReactNode
-      | null;
-    alignment?: 'left' | 'right';
-  };
-  size?: 'small' | 'medium' | 'large';
-  label: string;
-  onClick?: () => void;
-}
-
-const Button = ({
+const Button: React.FC<ButtonProps> = ({
+  children,
   variant = 'primary',
   size = 'medium',
   backgroundColor = '',
   label,
   setIcon = {
     icon: null,
-    alignment: 'left',
+    alignment: 'left'
   },
+  error = false,
   ...props
 }: ButtonProps) => {
-  console.log(variant);
+  const ICON =
+    setIcon?.icon && cloneElement(setIcon?.icon, { className: '' });
 
   return (
     <button
       type="button"
-      className={[
+      className={clsx(
         'fusion-button',
         `fusion-button--${size}`,
         `fusion-button--${variant}`,
-      ].join(' ')}
+        `fusion-button-icon-alignment-${setIcon.alignment}`,
+        { [`fusion-error-state`]: error }
+      )}
       style={{ backgroundColor }}
       {...props}
     >
-      <span
-        className={`fusion-button--icon--${
-          setIcon?.alignment ?? 'left'
-        }`}
-      >
-        {setIcon &&
-          React.isValidElement(setIcon?.icon) &&
-          React.cloneElement(setIcon?.icon)}
-      </span>
-      {label}
+      {setIcon?.icon && (
+        <span
+          className={`fusion-button--icon--${setIcon?.alignment}`}
+        > 
+          {ICON}
+        </span>
+      )}
+      {children || label}
     </button>
   );
 };
 
 export default Button;
-
