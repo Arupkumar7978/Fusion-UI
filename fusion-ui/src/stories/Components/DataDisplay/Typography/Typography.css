@@ -1,0 +1,51 @@
+.typography {
+  font-size: medium;
+  color: black;
+  font-weight: 500;
+}
+
+.typography--display {
+  font-weight: 400;
+}
+
+.typography--body {
+  font-weight: 500;
+}
+
+.typography--heading {
+  font-weight: bold;
+}
+
+.typography--link {
+  color: blue;
+  font-weight: 500;
+}
+
+.typography--extraSmall {
+  font-size: x-small;
+}
+
+.typography--small {
+  font-size: small;
+}
+
+.typography--medium {
+  font-size: medium;
+}
+
+.typography--large {
+  font-size: large;
+}
+
+.typography--extraLarge {
+  font-size: xx-large;
+}
+
+.typography--mandatory {
+  color: red;
+  margin-left: 0.25rem;
+}
+
+.typography--disabled {
+  color: grey;
+}
