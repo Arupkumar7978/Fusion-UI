@@ -7,12 +7,12 @@ const meta = {
   // title: 'Example/Button',
   component: Button,
   parameters: {
-    layout: 'centered',
+    layout: 'centered'
   },
   tags: ['autodocs'],
   argTypes: {
-    backgroundColor: { control: 'color' },
-  },
+    backgroundColor: { control: 'color' }
+  }
 } satisfies Meta<typeof Button>;
 
 export default meta;
@@ -21,42 +21,50 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     variant: 'primary',
-    label: 'Button',
-  },
+    label: 'Button'
+  }
 };
 
 export const Secondary: Story = {
   args: {
     variant: 'secondary',
-    label: 'Secondary',
-  },
+    label: 'Button'
+  }
 };
 export const Outlined: Story = {
   args: {
     variant: 'tertiary',
-    label: 'Tertiary',
-  },
+    label: 'Tertiary'
+  }
 };
 export const IconButton: Story = {
   args: {
     variant: 'primary',
-    label: 'LogIn with Email',
+    label: 'Icon Button',
     setIcon: {
       icon: <HiMail />,
-    },
-  },
-};
-
-export const Large: Story = {
-  args: {
-    size: 'large',
-    label: 'Button',
-  },
+      alignment: 'left'
+    }
+  }
 };
 
 export const Small: Story = {
   args: {
     size: 'small',
-    label: 'Button',
-  },
+    label: 'Button'
+  }
+};
+
+export const Medium: Story = {
+  args: {
+    size: 'medium',
+    label: 'Button'
+  }
+};
+
+export const Large: Story = {
+  args: {
+    size: 'large',
+    label: 'Button'
+  }
 };
