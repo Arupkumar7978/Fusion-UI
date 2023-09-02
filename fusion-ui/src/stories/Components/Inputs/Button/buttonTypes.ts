@@ -1,5 +1,5 @@
 export default interface ButtonProps {
-  variant?: 'primary' | 'secondary' | 'tertiary';
+  variant?: 'primary' | 'secondary' | 'tertiary' | string;
   disabled?: boolean;
   backgroundColor?: string;
   setIcon?: {
@@ -7,8 +7,8 @@ export default interface ButtonProps {
     alignment?: 'left' | 'right';
   };
   size?: 'small' | 'medium' | 'large';
-  label?: string | React.ReactElement | JSX.Element;
+  label?: string | React.ReactElement | JSX.Element | Element;
   error?: boolean;
-  children?: React.ReactElement | JSX.Element | string;
-  onClick?: () => void;
+  children?: React.ReactElement | JSX.Element | string | Element;
+  onClick?: (event?: React.MouseEvent<HTMLButtonElement>) => void;
 }
