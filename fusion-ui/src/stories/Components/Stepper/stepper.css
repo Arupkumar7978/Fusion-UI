@@ -32,6 +32,8 @@
   width: 100%;
   z-index: -1;
   transition: all 0.3s ease-in;
+  position: relative;
+  top: -0.5rem;
 }
 
 .fusion-circle-container {
@@ -45,6 +47,7 @@
 
 .fusion-stepper-content {
   display: flex;
+  transition: all 0.3s ease-in;
   flex: 1;
 }
 
