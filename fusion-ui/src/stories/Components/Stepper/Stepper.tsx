@@ -22,6 +22,12 @@ const Stepper: React.FC<stepperType> = ({
     SUBMIT: 'SUBMIT'
   };
 
+  (function () {
+    if (!activeStep || activeStep <= 0) {
+      activeStep = 1;
+    }
+  })();
+
   const [stepperState, setStepperState] =
     React.useState<stepperStateTypes>({
       currentStep: activeStep ?? 1
@@ -38,28 +44,24 @@ const Stepper: React.FC<stepperType> = ({
         setStepperState({
           ...stepperState,
           currentStep: currentStep + 1
-          // [type]: false
         });
         return;
       }
       setStepperState({
         ...stepperState,
         currentStep: ITEM_LIST_SIZE
-        // [type]: true
       });
     } else if (BUTTON_ACTION_TYPES.BACK === type) {
       if (currentStep === 1) {
         setStepperState({
           ...stepperState,
           currentStep: 1
-          // [type]: true
         });
         return;
       }
       setStepperState({
         ...stepperState,
         currentStep: currentStep - 1
-        // [type]: false
       });
     }
   };
@@ -71,17 +73,20 @@ const Stepper: React.FC<stepperType> = ({
     switch (actionType) {
       case BUTTON_ACTION_TYPES.NEXT:
         return (
-          buttonActionHandler ?? actionButtonsHandler(actionType)
+          buttonActionHandler?.() ?? actionButtonsHandler(actionType)
         );
       case BUTTON_ACTION_TYPES.BACK:
         return (
-          buttonActionHandler ?? actionButtonsHandler(actionType)
+          buttonActionHandler?.() ?? actionButtonsHandler(actionType)
         );
 
       default:
-        return alert('Please provide custom action handler');
+        return buttonActionHandler?.();
     }
   };
+  React.useEffect(() => {
+    setStepperState({ ...stepperState, currentStep: activeStep });
+  }, [activeStep]);
 
   const GET_ACTION_BUTTONS = () => {
     const leftDivButtons: any[] = [];
