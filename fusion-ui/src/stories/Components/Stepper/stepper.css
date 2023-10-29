@@ -1,0 +1,62 @@
+.fusion-stepper-section {
+  display: flex;
+  flex-direction: column;
+  height: -webkit-fill-available;
+}
+
+.fusion-stepper-root .fusion-stepper-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fusion-step-circle {
+  display: flex;
+  border-radius: 50%;
+  background-color: var(--primary-hover);
+  height: 2rem;
+  width: 2rem;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bold;
+  justify-content: center;
+  transition: all 0.4s ease-in-out;
+}
+.fusion-step-circle svg {
+  color: var(--background);
+}
+.fusion-progress-line {
+  height: 0.2rem;
+  background-color: var(--primary-hover);
+  width: 100%;
+  z-index: -1;
+  transition: all 0.3s ease-in;
+}
+
+.fusion-circle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30rem;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.fusion-stepper-content {
+  display: flex;
+  flex: 1;
+}
+
+.fusion-stepper-footer {
+  display: flex;
+  justify-content: space-between;
+}
+.fusion-stepper-buttons--LEFT-div {
+  display: flex;
+}
+.fusion-stepper-buttons--RIGHT-div {
+  display: flex;
+  column-gap: 0.5rem;
+  flex-direction: row-reverse;
+}
