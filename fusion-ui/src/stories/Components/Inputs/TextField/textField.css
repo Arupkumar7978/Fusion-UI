@@ -1,0 +1,118 @@
+:root {
+  --background: #ffffff;
+  --foreground: #0d0d0e;
+  --muted: #f5f6fb;
+  --muted-foreground: #797e92;
+  --popover: #ffffff;
+  --popover-foreground: #0d0d0e;
+  --card: #ffffff;
+  --card-foreground: #0d0d0e;
+  --border: #c1c2c7;
+  --input: #c1c2c7;
+  --primary: #1a1a1c;
+  --primary-foreground: #fafafa;
+  --secondary: #f5f6fb;
+  --secondary-foreground: #1a1a1c;
+  --accent: #f5f6fb;
+  --accent-foreground: #1a1a1c;
+  --destructive: #ff1f33;
+  --destructive-foreground: #fafafa;
+  --ring: #676a81;
+  --radius: 0.5rem;
+}
+
+.fusion {
+  position: relative;
+  width:100%;
+}
+
+.fusion-input {
+  /* font: inherit; */
+  height:0.7rem;
+  padding: 10px;
+  border:2px solid #0d0d0e;
+  border-radius: 0.3rem;
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.fusion-label {
+  position: absolute;
+  left: 0;
+  padding: 10px 20px;
+  font-size: 90%;
+  color: var(--primary);
+  transition: 0.2s;
+  z-index: 0;
+}
+.fusion-input:focus + .fusion-label, .fusion-label.has-content{
+  padding-inline: 5px;
+  transform: translateX(10px) translateY(-7px);
+  font-size: 0.65em;
+  padding: 0 5px;
+  background: var(--background);
+  z-index: 2;
+}
+
+/* input variant: filled */
+.fusion-input--filled {
+  color: #333;
+  background-color: #bbbbbb6b;
+  box-shadow: rgba(96, 96, 96, 0.073) 0px 0px 0px 1px inset;
+}
+
+/* input variant: standard */
+.fusion-input--standard {
+  top:20px;
+  position: absolute;
+  color: #333;
+  background-color: transparent;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+}
+
+/* label-standred size: small */
+.fusion-label-standred--small {
+  font-size: 10px;
+}
+
+/* label-standred size: medium (default) */
+.fusion-label-standred--medium {
+  font-size: 14px;
+}
+
+/* label-standred size: large */
+.fusion-label-standred--large {
+  font-size: 16px;
+}
+
+/* label size: small */
+.fusion-label--small {
+  font-size: 12px;
+}
+
+/* label size: medium (default) */
+.fusion-label--medium {
+  font-size: 14px;
+}
+
+/* label size: large */
+.fusion-label--large {
+  font-size: 16px;
+
+}
+
+/* input size: small */
+.fusion-input--small {
+  font-size: 12px;
+}
+
+/* input size: medium (default) */
+.fusion-input--medium {
+  font-size: 14px;
+}
+
+/* input size: large */
+.fusion-input--large {
+  font-size: 16px;
+}
