@@ -98,4 +98,5 @@
 }
 .fusion-error-state {
   background-color: var(--error-state);
+  color: var(--background);
 }
