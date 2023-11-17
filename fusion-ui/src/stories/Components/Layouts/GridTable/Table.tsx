@@ -6,9 +6,7 @@ type TableProps = {
 };
 
 const Table: React.FC<TableProps> = ({ children, className }) => {
-  return (
-      <table className={className}>{children}</table>
-  );
+  return <table className={className}>{children}</table>;
 };
 
 type TableHeadProps = {
@@ -21,11 +19,14 @@ const TableHead: React.FC<TableHeadProps> = ({ children }) => {
 
 type TableRowProps = {
   className?: string;
-  children: React.ReactNode;
+  children: unknown;
 };
 
-const TableRow: React.FC<TableRowProps> = ({ children, className }) => {
-  return <tr className={className}>{children}</tr>;
+const TableRow: React.FC<TableRowProps> = ({
+  children,
+  className
+}) => {
+  return <tr className={className}>{children as React.ReactNode}</tr>;
 };
 
 type TableHeaderCellProps = {
@@ -33,12 +34,11 @@ type TableHeaderCellProps = {
   children: React.ReactNode;
 };
 
-const TableHeaderCell = ({ onClick, children }: TableHeaderCellProps) => {
-  return (
-    <th onClick={onClick}>
-      {children}
-    </th>
-  );
+const TableHeaderCell = ({
+  onClick,
+  children
+}: TableHeaderCellProps) => {
+  return <th onClick={onClick}>{children}</th>;
 };
 
 type TableBodyProps = {
@@ -54,7 +54,14 @@ type TableRowCellProps = {
 };
 
 const TableRowCell: React.FC<TableRowCellProps> = ({ children }) => {
-  return <td>{children}</td>;
+  return <td title={children?.toString()}>{children}</td>;
 };
 
-export { Table, TableHead, TableRow, TableHeaderCell, TableBody, TableRowCell };
+export {
+  Table,
+  TableHead,
+  TableRow,
+  TableHeaderCell,
+  TableBody,
+  TableRowCell
+};

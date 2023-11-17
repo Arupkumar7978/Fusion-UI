@@ -1,12 +1,12 @@
 .fusion-modal-root {
-  font-family: Arial, Helvetica, sans-serif;
+   font-family: Arial, Helvetica, sans-serif;
   position: fixed;
   z-index: 999;
   right: 0px;
   bottom: 0px;
   top: 0px;
   left: 0px;
-  transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out; 
 }
 
 .fusion-modal-backdrop {
@@ -17,7 +17,6 @@
   top: 0;
   right: 0;
   transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  transition: 0.4s ease-in-out;
 }
 
 .fusion-modal-container {
@@ -72,6 +71,15 @@
 
 .fusion-modal-warning-icon {
   color: #ffc107;
+  font-size: large;
+}
+
+.fusion-modal-error-icon {
+  color: #f44336;
+  font-size: large;
+}
+.fusion-modal-confirm-icon {
+  color: #43a047;
   font-size: large;
 }
 

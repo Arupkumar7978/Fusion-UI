@@ -4,6 +4,9 @@ import ModalTypes from './modalTypes';
 import Typography from '../../DataDisplay/Typography/Typography';
 import { IoClose } from 'react-icons/io5';
 import { GoAlertFill } from 'react-icons/go';
+import {VscError} from 'react-icons/vsc'
+import { FcInfo } from 'react-icons/fc';
+import { IoCheckmarkDoneCircleSharp } from 'react-icons/io5';
 import './modal.css';
 import Button from '../../Inputs/Button/Button';
 
@@ -31,13 +34,13 @@ const Modal: React.FC<ModalTypes> = ({
       case 'warning':
         return <GoAlertFill className={iconClass} />;
       case 'info':
-        return <GoAlertFill className={iconClass} />;
+        return <FcInfo className={iconClass} />;
       case 'confirm':
-        return <GoAlertFill className={iconClass} />;
+        return <IoCheckmarkDoneCircleSharp className={iconClass} />;
       case 'error':
-        return <GoAlertFill className={iconClass} />;
+        return <VscError className={iconClass} />;
       case 'custom':
-        return ;
+        return;
 
       default:
         return null;
@@ -76,7 +79,7 @@ const Modal: React.FC<ModalTypes> = ({
       <div className={`${FUSION}-footer`}>{footerContent}</div>
     );
 
-  const handleMouseEvents = () => setOpenModal(false);
+  const handleMouseEvents = () => setOpenModal(true);
 
   return (
     <>
