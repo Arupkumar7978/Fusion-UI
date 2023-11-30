@@ -1,2 +1,2 @@
 /* eslint-disable react-refresh/only-export-components */
-export * from './stories/Components/index';
+export * from './src/stories/Components/index';

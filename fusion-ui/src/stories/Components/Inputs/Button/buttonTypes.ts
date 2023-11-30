@@ -7,8 +7,8 @@ export default interface ButtonProps {
     alignment?: 'left' | 'right';
   };
   size?: 'small' | 'medium' | 'large';
-  label?: string | React.ReactElement | JSX.Element | Element;
+  // label?: string | React.ReactElement | JSX.Element | Element;
   error?: boolean;
-  children?: React.ReactElement | JSX.Element | string | Element;
+  children: React.ReactNode;
   onClick?: (event?: React.MouseEvent<HTMLButtonElement>) => void;
 }
