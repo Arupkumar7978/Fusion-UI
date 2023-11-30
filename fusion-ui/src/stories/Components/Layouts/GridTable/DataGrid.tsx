@@ -22,9 +22,7 @@ interface DataGridProps {
   sortedColumn?: string | undefined;
 }
 
-export const DataGrid: React.FC<DataGridProps> = (
-  props: DataGridProps
-) => {
+const DataGrid = (props: DataGridProps) => {
   const initialState: DataGridProps = {
     rows: [],
     headers: [],
@@ -221,3 +219,5 @@ const SortIndicator = ({ direction }: SortIndicatorProps) => {
     return null; // No arrow
   }
 };
+
+export default DataGrid;

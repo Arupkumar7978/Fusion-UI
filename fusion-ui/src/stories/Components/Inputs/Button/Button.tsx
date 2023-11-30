@@ -3,12 +3,11 @@ import './button.css';
 import ButtonProps from './buttonTypes';
 import clsx from 'clsx';
 
-const Button: React.FC<ButtonProps> = ({
+const Button = ({
   children,
   variant = 'primary',
   size = 'medium',
   backgroundColor = '',
-  label,
   setIcon = {
     icon: null,
     alignment: 'left'
@@ -35,11 +34,11 @@ const Button: React.FC<ButtonProps> = ({
       {setIcon?.icon && (
         <span
           className={`fusion-button--icon--${setIcon?.alignment}`}
-        > 
+        >
           {ICON}
         </span>
       )}
-      {children || label}
+      {children}
     </button>
   );
 };
