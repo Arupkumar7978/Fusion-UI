@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import "./textField.css";
+import React, { useState } from 'react';
+import './textField.css';
 
 interface TextFieldProps {
   /**
    * Is this the principal call to action on the page?
    */
-  variant?: "outlined" | "filled" | "standard";
+  variant?: 'outlined' | 'filled' | 'standard';
   /**
    * What background color to use
    */
@@ -13,7 +13,7 @@ interface TextFieldProps {
   /**
    * How large should the button be?
    */
-  size?: "small" | "medium" | "large";
+  size?: 'small' | 'medium' | 'large';
   /**
    * Button contents
    */
@@ -27,9 +27,9 @@ interface TextFieldProps {
 /**
  * Primary UI component for user interaction
  */
-export const TextField: React.FC<TextFieldProps> = ({
-  variant = "outlined",
-  size = "medium",
+const TextField: React.FC<TextFieldProps> = ({
+  variant = 'outlined',
+  size = 'medium',
   backgroundColor,
   label,
   ...props
@@ -51,19 +51,21 @@ export const TextField: React.FC<TextFieldProps> = ({
         type="text"
         id="outlined"
         className={[
-          "fusion-input",
+          'fusion-input',
           `fusion-input--${size}`,
-          `fusion-input--${variant}`,
-        ].join(" ")}
+          `fusion-input--${variant}`
+        ].join(' ')}
         onFocus={handleFocus}
         onBlur={handleBlur}
       />
       <label
         htmlFor="outlined"
         className={
-          variant === "standard"
+          variant === 'standard'
             ? `fusion-label-standred--${size}`
-            : [`fusion-label ${hasContent ? "has-content" : ""}`].join("")
+            : [
+                `fusion-label ${hasContent ? 'has-content' : ''}`
+              ].join('')
         }
       >
         {label}
@@ -71,3 +73,5 @@ export const TextField: React.FC<TextFieldProps> = ({
     </div>
   );
 };
+
+export default TextField;
